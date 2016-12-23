@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2016-12-21 20:36:59
 # @Last Modified by:   krocki
-# @Last Modified time: 2016-12-22 20:19:25
+# @Last Modified time: 2016-12-22 21:08:38
 import cPickle, gzip, numpy
 from NN import *
 
@@ -14,16 +14,18 @@ f.close()
 ## set up NN
 batchsize = 100
 learningrate = 1e-3
-epochs = 999
-batches_per_epoch = 32
+epochs = 1000
+batches_per_epoch = 10
 num_classes = 10
 smoothloss = np.log(num_classes)
 accuracy = 100/num_classes;
 
+# should reach about 97-98 % accuracy on the test set and ~0.03 training loss
+
 layers = [ 
-			Linear(784, 100, batchsize), 
-			ReLU(100, 100, batchsize), 
-			Linear(100, 10, batchsize), 
+			Linear(784, 256, batchsize), 
+			ReLU(256, 256, batchsize), 
+			Linear(256, 10, batchsize), 
 			Softmax(10, 10, batchsize)
 		]
 
