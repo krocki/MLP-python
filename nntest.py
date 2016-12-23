@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2016-12-21 20:36:59
 # @Last Modified by:   krocki
-# @Last Modified time: 2016-12-22 20:18:22
+# @Last Modified time: 2016-12-22 20:19:25
 import cPickle, gzip, numpy
 from NN import *
 
@@ -50,5 +50,5 @@ for e in range(epochs):
 	outputs = nn.forward(inputs)
 	predicted_classes = np.argmax(outputs, axis=0)
 	accuracy = 0.9 * accuracy + 0.1 * np.sum(targets_int == predicted_classes)*100/batchsize
-	print "epoch %3d" % e + " --- loss: " + '%.3f' % smoothloss + ", accuracy: " + '%.1f %%' % accuracy
+	print "epoch %3d" % e + " --- training loss: " + '%.3f' % smoothloss + ", test accuracy: " + '%.1f %%' % accuracy
 
