@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2016-12-21 20:36:59
 # @Last Modified by:   krocki
-# @Last Modified time: 2016-12-22 21:08:38
+# @Last Modified time: 2016-12-22 22:39:47
 import cPickle, gzip, numpy
 from NN import *
 
@@ -25,7 +25,9 @@ accuracy = 100/num_classes;
 layers = [ 
 			Linear(784, 256, batchsize), 
 			ReLU(256, 256, batchsize), 
-			Linear(256, 10, batchsize), 
+			Linear(256, 64, batchsize), 
+			ReLU(64, 64, batchsize), 
+			Linear(64, 10, batchsize), 
 			Softmax(10, 10, batchsize)
 		]
 
