@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2016-12-21 10:22:24
 # @Last Modified by:   krocki
-# @Last Modified time: 2016-12-22 20:05:17
+# @Last Modified time: 2016-12-22 20:10:20
 
 # -*- coding: utf-8 -*-
 # @Author: krocki
@@ -20,8 +20,8 @@ f.close()
 ## set up NN
 batchsize = 100
 learningrate = 1e-3
-epochs = 1000
-batches_per_epoch = 100
+epochs = 999
+batches_per_epoch = 32
 num_classes = 10
 smoothloss = np.log(num_classes)
 accuracy = 100/num_classes;
@@ -56,5 +56,5 @@ for e in range(epochs):
 	outputs = nn.forward(inputs)
 	predicted_classes = np.argmax(outputs, axis=0)
 	accuracy = 0.9 * accuracy + 0.1 * np.sum(targets_int == predicted_classes)*100/batchsize
-	print "epoch " + str(e) + " --- loss: " + '%.3f' % smoothloss + ", accuracy: " + '%.1f %%' % accuracy
+	print "epoch %3d" % e + " --- loss: " + '%.3f' % smoothloss + ", accuracy: " + '%.1f %%' % accuracy
 
