@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2016-12-21 20:36:59
 # @Last Modified by:   krocki
-# @Last Modified time: 2016-12-22 20:13:28
+# @Last Modified time: 2016-12-22 20:18:22
 import cPickle, gzip, numpy
 from NN import *
 
@@ -20,9 +20,7 @@ num_classes = 10
 smoothloss = np.log(num_classes)
 accuracy = 100/num_classes;
 
-layers = 
-
-		[ 
+layers = [ 
 			Linear(784, 100, batchsize), 
 			ReLU(100, 100, batchsize), 
 			Linear(100, 10, batchsize), 
