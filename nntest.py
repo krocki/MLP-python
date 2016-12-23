@@ -1,14 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: krocki
-# @Date:   2016-12-21 10:22:24
-# @Last Modified by:   krocki
-# @Last Modified time: 2016-12-22 20:10:20
-
-# -*- coding: utf-8 -*-
-# @Author: krocki
 # @Date:   2016-12-21 20:36:59
 # @Last Modified by:   krocki
-# @Last Modified time: 2016-12-21 20:41:09
+# @Last Modified time: 2016-12-22 20:12:29
 import cPickle, gzip, numpy
 from NN import *
 
