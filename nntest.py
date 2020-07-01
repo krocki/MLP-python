@@ -3,12 +3,12 @@
 # @Date:   2016-12-21 20:36:59
 # @Last Modified by:   krocki
 # @Last Modified time: 2016-12-22 22:39:47
-import cPickle, gzip, numpy
+import pickle, gzip, numpy
 from NN import *
 
 # MNIST # Load the dataset
 f = gzip.open('mnist.pkl.gz', 'rb')
-train_set, valid_set, test_set = cPickle.load(f)
+train_set, valid_set, test_set = pickle.load(f, encoding='bytes')
 f.close()
 
 ## set up NN
@@ -54,5 +54,6 @@ for e in range(epochs):
 	outputs = nn.forward(inputs)
 	predicted_classes = np.argmax(outputs, axis=0)
 	accuracy = 0.9 * accuracy + 0.1 * np.sum(targets_int == predicted_classes)*100/batchsize
-	print "epoch %3d" % e + " --- training loss: " + '%.3f' % smoothloss + ", test accuracy: " + '%.1f %%' % accuracy
+	print('epoch {:3d} -- training loss: {:.2f}, accuracy {:.2f} %'.format(e, smoothloss, accuracy))
+	#print "epoch %3d" % e + " --- training loss: " + '%.3f' % smoothloss + ", test accuracy: " + '%.1f %%' % accuracy
 
